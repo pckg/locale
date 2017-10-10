@@ -1,0 +1,19 @@
+{
+  "name": "pckg/locale",
+  "description": "PHP locale",
+  "homepage": "https://github.com/pckg/locale",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bojan Rajh",
+      "email": "schtr4jh@schtr4jh.net"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-0": {
+      "Pckg": "src\\"
+    }
+  },
+  "minimum-stability": "dev"
+}
