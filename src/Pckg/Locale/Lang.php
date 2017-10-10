@@ -1,7 +1,7 @@
 <?php namespace Pckg\Locale;
 
 use Pckg\Locale\LangInterface as LangAdapter;
-use Pckg\Framework\Inter\Entity\Languages;
+use Pckg\Locale\Entity\Languages;
 
 class Lang implements LangAdapter
 {
