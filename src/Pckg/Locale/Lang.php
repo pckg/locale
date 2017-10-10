@@ -1,6 +1,6 @@
 <?php namespace Pckg\Locale;
 
-use Pckg\Database\Entity\Extension\Adapter\Lang as LangAdapter;
+use Pckg\Locale\LangInterface as LangAdapter;
 use Pckg\Framework\Inter\Entity\Languages;
 
 class Lang implements LangAdapter
