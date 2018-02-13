@@ -1,6 +1,5 @@
 <?php namespace Pckg\Locale\Middleware;
 
-use Pckg\Framework\Router\Command\ResolveRoute;
 use Pckg\Locale\Record\Language;
 
 class InitRequestLanguage
