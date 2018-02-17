@@ -50,6 +50,16 @@ class InitRequestLanguage
         /**
          * Check for default language?
          */
+        $language = Language::gets(['frontend' => true]);
+        if ($language) {
+            $language->setAsCurrent();
+
+            return $next();
+        }
+
+        /**
+         * Check for any language?
+         */
         $language = Language::gets([]);
         if ($language) {
             $language->setAsCurrent();
