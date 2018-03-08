@@ -18,6 +18,7 @@ class InitRequestLanguage
         $langCode = $match['language'] ?? null;
 
         if ($langCode) {
+            message('Setting language from route match.');
             $this->setFromLangCode($langCode);
 
             return $next();
@@ -42,16 +43,29 @@ class InitRequestLanguage
         $domain = server('HTTP_HOST');
         $language = Language::gets(['domain' => $domain]);
         if ($language) {
+            message('Setting language from domain.');
             $language->setAsCurrent();
 
             return $next();
         }
 
         /**
-         * Check for default language?
+         * Check for default frontend language?
+         */
+        $language = Language::gets(['frontend' => true, 'default' => true]);
+        if ($language) {
+            message('Setting default frontend language.');
+            $language->setAsCurrent();
+
+            return $next();
+        }
+
+        /**
+         * Check for default frontend language?
          */
         $language = Language::gets(['frontend' => true]);
         if ($language) {
+            message('Setting any frontend language.');
             $language->setAsCurrent();
 
             return $next();
@@ -60,8 +74,9 @@ class InitRequestLanguage
         /**
          * Check for any language?
          */
-        $language = Language::gets([]);
+        $language = Language::gets();
         if ($language) {
+            message('Setting first language found.');
             $language->setAsCurrent();
         }
 
