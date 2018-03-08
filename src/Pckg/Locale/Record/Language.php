@@ -52,11 +52,8 @@ class Language extends Record
         /**
          * Set app locale and language
          */
-        config()->set('pckg.locale.language', $this->slug);
-        config()->set('pckg.locale.current', $this->locale);
-        $locale = resolve(Locale::class);
-        $locale->setCurrent($this->locale);
         message('Setting ' . $this->slug . ' as language and ' . $this->locale . ' as locale');
+        localeManager()->setCurrent($this->locale, $this->slug);
     }
 
 }
