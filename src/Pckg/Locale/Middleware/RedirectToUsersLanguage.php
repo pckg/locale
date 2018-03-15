@@ -17,7 +17,7 @@ class RedirectToUsersLanguage
         /**
          * Skip non-http requests.
          */
-        if (!config('multilingual')) {
+        if (true || !config('multilingual')) {
             return $next();
         }
 

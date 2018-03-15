@@ -38,7 +38,7 @@ class InitRequestLanguage
             }*/
 
             $domain = server('HTTP_HOST');
-            $language = Language::gets(['domain' => $domain]);
+            $language = localeManager()->getLanguageBy('domain', $domain);
             if ($language) {
                 message('Setting language from domain.');
                 $language->setAsCurrent();
@@ -50,7 +50,7 @@ class InitRequestLanguage
         /**
          * Check for default frontend language?
          */
-        $language = Language::gets(['frontend' => true, 'default' => true]);
+        $language = localeManager()->getDefaultFrontendLanguage();
         if ($language) {
             message('Setting default frontend language.');
             $language->setAsCurrent();
@@ -61,7 +61,7 @@ class InitRequestLanguage
         /**
          * Check for default frontend language?
          */
-        $language = Language::gets(['frontend' => true]);
+        $language = localeManager()->getFrontendLanguages()->first();
         if ($language) {
             message('Setting any frontend language.');
             $language->setAsCurrent();
@@ -72,7 +72,7 @@ class InitRequestLanguage
         /**
          * Check for any language?
          */
-        $language = Language::gets();
+        $language = localeManager()->getLanguages()->first();
         if ($language) {
             message('Setting first language found.');
             $language->setAsCurrent();
@@ -83,7 +83,7 @@ class InitRequestLanguage
 
     protected function setFromLangCode($langCode)
     {
-        $language = Language::gets(['slug' => $langCode]);
+        $language = localeManager()->getLanguageBy('slug', $langCode);
         $language->setAsCurrent();
     }
 

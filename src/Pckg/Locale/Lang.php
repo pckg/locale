@@ -29,7 +29,7 @@ class Lang implements LangAdapter
 
     public function getLanguages()
     {
-        return (new Languages())->all();
+        return localeManager()->getLanguages();
     }
 
 }
