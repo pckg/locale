@@ -77,6 +77,7 @@ class PrepareLocalizer extends Command
             $language = Language::getOrCreate(['slug' => $langCode]);
             $language->frontend = $only || !$first;
             $language->backend = $first;
+            $language->default = $only || !$first;
             $language->save();
 
             $first = false;
