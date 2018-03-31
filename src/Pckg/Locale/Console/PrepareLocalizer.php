@@ -29,6 +29,11 @@ class PrepareLocalizer extends Command
         /**
          * Currently supported languages.
          */
+        $locales = [
+            'en' => 'en_GB',
+            'sl' => 'sl_SI',
+            'hr' => 'hr_HR',
+        ];
         $languages = [
             'en' => [
                 'en' => 'English',
@@ -75,10 +80,12 @@ class PrepareLocalizer extends Command
         $only = count($toImport) == 1;
         foreach ($finalLanguages as $langCode => $translations) {
             $language = Language::getOrCreate(['slug' => $langCode]);
-            $language->frontend = $only || !$first;
-            $language->backend = $first;
-            $language->default = $only || !$first;
-            $language->save();
+            $language->setAndSave([
+                                      'frontend' => $only || !$first,
+                                      'backend'  => $first,
+                                      'default'  => $only || !$first,
+                                      'locale'   => $locales[$langCode],
+                                  ]);
 
             $first = false;
         }
