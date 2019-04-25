@@ -3,6 +3,7 @@
 use Exception;
 use Pckg\Framework\Console\Command;
 use Pckg\Locale\Record\Language;
+use Symfony\Component\Console\Input\InputArgument;
 
 class PrepareLocalizer extends Command
 {
@@ -13,7 +14,7 @@ class PrepareLocalizer extends Command
              ->setDescription('Prepare frontend languages')
              ->addArguments([
                                 'language' => 'Platforms language',
-                            ]);
+                            ], InputArgument::REQUIRED);
     }
 
     public function handle()
