@@ -22,6 +22,18 @@ class InitRequestLanguage
             }
 
             /**
+             * Check for header stuff.
+             */
+            $headerLocale = request()->header('X-Pckg-Locale');
+
+            if ($headerLocale) {
+                message('Setting locale from HTTP header.');
+                $this->setFromLangCode(substr($headerLocale, 0, 2));
+
+                return $next();
+            }
+
+            /**
              * Try to get language from previous request.
              */
             /*if ($referer = server('HTTP_REFERER', null)) {
