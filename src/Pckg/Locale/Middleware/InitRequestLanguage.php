@@ -11,10 +11,11 @@ class InitRequestLanguage
             /**
              * Check for http stuff.
              */
+            $languages = localeManager()->getFrontendLanguages()->keyBy('slug');
             $match = request()->getMatch();
             $langCode = $match['language'] ?? null;
 
-            if ($langCode) {
+            if ($langCode && isset($languages[$langCode])) {
                 message('Setting language from route match.');
                 $this->setFromLangCode($langCode);
 
@@ -26,7 +27,7 @@ class InitRequestLanguage
              */
             $headerLocale = request()->header('X-Pckg-Locale');
 
-            if ($headerLocale) {
+            if ($headerLocale && isset($languages[substr($headerLocale, 0, 2)])) {
                 message('Setting locale from HTTP header.');
                 $this->setFromLangCode(substr($headerLocale, 0, 2));
 
@@ -34,20 +35,15 @@ class InitRequestLanguage
             }
 
             /**
-             * Try to get language from previous request.
+             * Try to get language from session.
              */
-            /*if ($referer = server('HTTP_REFERER', null)) {
-                $url = parse_url($referer);
-                $match = (new ResolveRoute(router(), $url['path'],
-                                           first($url['host'], server('HTTP_HOST'), config('domain'))))->execute();
-                $langCode = $match['language'] ?? null;
+            $sessionLang = $_SESSION['pckg_dynamic_lang_id'] ?? null;
+            if ($sessionLang && isset($languages[$sessionLang])) {
+                message('Setting locale from Session.');
+                $this->setFromLangCode($sessionLang);
 
-                if ($langCode) {
-                    $this->setFromLangCode($langCode);
-
-                    return $next();
-                }
-            }*/
+                return $next();
+            }
 
             $domain = server('HTTP_HOST');
             $language = localeManager()->getLanguageBy('domain', $domain);
