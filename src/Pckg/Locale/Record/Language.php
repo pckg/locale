@@ -18,7 +18,7 @@ class Language extends Record
 
     public function getSwitchUrlAttribute()
     {
-        return router()->getUri() . '?lang=' . $this->slug;
+        return /*router()->getUri() . */'?lang=' . $this->slug;
     }
 
     public function getCurrentPageUrlAttribute()
