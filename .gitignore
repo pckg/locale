@@ -1,7 +1,5 @@
-# TESTS ;-)
-tests/_output/*
-tests/acceptance.suite.yml
-codeception.yml
-
-# DEPENDENCIES
+.idea/
 vendor/
+tests/_data/*
+tests/_output/*
+codeception.yml
