@@ -39,7 +39,7 @@ class InitRequestLanguage
              */
             $sessionLang = $_SESSION['pckg_dynamic_lang_id'] ?? null;
             if ($sessionLang && isset($languages[$sessionLang])) {
-                message('Setting locale from Session.');
+                message('Setting locale from Session (' . $sessionLang . ').');
                 $this->setFromLangCode($sessionLang);
 
                 return $next();
