@@ -1,4 +1,6 @@
-<?php namespace Pckg\Locale\Provider;
+<?php
+
+namespace Pckg\Locale\Provider;
 
 use Pckg\Cache\Handler\InvalidateCacheByRecord;
 use Pckg\Framework\Provider;
@@ -29,5 +31,4 @@ class Localizer extends Provider
             ],
         ];
     }
-
 }

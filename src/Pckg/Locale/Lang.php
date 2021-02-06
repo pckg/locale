@@ -1,4 +1,6 @@
-<?php namespace Pckg\Locale;
+<?php
+
+namespace Pckg\Locale;
 
 use Pckg\Locale\Entity\Languages;
 use Pckg\Locale\LangInterface as LangAdapter;
@@ -31,5 +33,4 @@ class Lang implements LangAdapter
     {
         return localeManager()->getLanguages();
     }
-
 }

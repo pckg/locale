@@ -60,5 +60,4 @@ class Language extends Record
         message('Setting ' . $this->slug . ' as language and ' . $this->locale . ' as locale');
         localeManager()->setCurrent($this->locale, $this->slug);
     }
-
 }

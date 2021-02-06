@@ -1,4 +1,6 @@
-<?php namespace Pckg\Locale\Middleware;
+<?php
+
+namespace Pckg\Locale\Middleware;
 
 use Pckg\Locale\Record\Language;
 
@@ -94,5 +96,4 @@ class InitRequestLanguage
         $language = localeManager()->getLanguageBy('slug', $langCode);
         $language->setAsCurrent();
     }
-
 }

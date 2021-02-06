@@ -1,4 +1,6 @@
-<?php namespace Pckg\Locale\Entity;
+<?php
+
+namespace Pckg\Locale\Entity;
 
 use Pckg\Database\Entity;
 use Pckg\Locale\Record\Language;
@@ -12,5 +14,4 @@ class Languages extends Entity
     {
         $this->joinTranslations();
     }
-
 }

@@ -1,4 +1,6 @@
-<?php namespace Pckg\Locale\Middleware;
+<?php
+
+namespace Pckg\Locale\Middleware;
 
 use Pckg\Locale\Record\Language;
 
@@ -62,5 +64,4 @@ class RedirectToUsersLanguage
         $language = Language::gets(['slug' => $langCode]);
         $language->setAsCurrent();
     }
-
 }

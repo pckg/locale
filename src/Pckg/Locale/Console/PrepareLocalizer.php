@@ -1,4 +1,6 @@
-<?php namespace Pckg\Locale\Console;
+<?php
+
+namespace Pckg\Locale\Console;
 
 use Exception;
 use Pckg\Framework\Console\Command;
@@ -93,7 +95,7 @@ class PrepareLocalizer extends Command
         foreach ($finalLanguages as $langCode => $translations) {
             $language = Language::getOrCreate(['slug' => $langCode]);
             foreach ($translations as $transCode => $translation) {
-                runInLocale(function() use ($language, $translation) {
+                runInLocale(function () use ($language, $translation) {
                     $language->setAndSave([
                                               'title' => $translation,
                                           ]);
@@ -103,5 +105,4 @@ class PrepareLocalizer extends Command
 
         $this->output('Done');
     }
-
 }

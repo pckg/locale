@@ -1,4 +1,6 @@
-<?php namespace Pckg\Locale\Entity\Helper;
+<?php
+
+namespace Pckg\Locale\Entity\Helper;
 
 use Pckg\Locale\Entity\Languages;
 
@@ -11,5 +13,4 @@ trait Language
                     ->foreignKey('language_id')
                     ->primaryKey('slug');
     }
-
 }

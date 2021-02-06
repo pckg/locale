@@ -1,4 +1,6 @@
-<?php namespace Pckg\Locale\Middleware;
+<?php
+
+namespace Pckg\Locale\Middleware;
 
 class CatchUrlLanguageChange
 {
@@ -27,5 +29,4 @@ class CatchUrlLanguageChange
 
         return $next();
     }
-
 }

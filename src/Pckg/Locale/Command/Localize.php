@@ -1,4 +1,6 @@
-<?php namespace Pckg\Locale\Command;
+<?php
+
+namespace Pckg\Locale\Command;
 
 use Pckg\Concept\AbstractChainOfReponsibility;
 use Pckg\Manager\Locale;
@@ -33,14 +35,14 @@ class Localize extends AbstractChainOfReponsibility
 
             $request = request();
 
-            if (!isset($i18n['current'])) // because it can be overridden
-            {
-                foreach ($i18n['langs'] AS $key => $lang) {
+            if (!isset($i18n['current'])) { // because it can be overridden
+                foreach ($i18n['langs'] as $key => $lang) {
                     if ($i18n['type'] == "domain" && strpos($request->host(), $lang['code']) === 0) {
                         $i18n['current'] = $key;
                     } else if ($i18n['type'] == "url" && strpos($request->url(), $lang['code']) === 0) {
                         $i18n['current'] = $key;
-                    } else if ($i18n['type'] == "cookie"
+                    } else if (
+                        $i18n['type'] == "cookie"
                                && isset($_COOKIE['lfw'])
                                && ($cookie = json_decode($_COOKIE['lfw']))
                                && isset($cookie['i18n'])
@@ -62,9 +64,8 @@ class Localize extends AbstractChainOfReponsibility
             // set session
             $_SESSION['lfw']['i18n'] = $i18n['current'];
 
-            if ($i18n['force'] == true) // perform redirect
-            {
-                /*if ($i18n['type'] == "domain" && strpos($request->host(), $lang['code']) !== 0) {
+            if ($i18n['force'] == true) { // perform redirect
+            /*if ($i18n['type'] == "domain" && strpos($request->host(), $lang['code']) !== 0) {
                     response()->redirect(
                         $request->scheme() . "://" . $i18n['langs'][$i18n['current']]['code'] . "." .
                         $config['domain'] . $request->url()
@@ -78,5 +79,4 @@ class Localize extends AbstractChainOfReponsibility
 
         return $next();
     }
-
 }
