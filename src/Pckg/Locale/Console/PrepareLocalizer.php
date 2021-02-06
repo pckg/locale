@@ -93,7 +93,7 @@ class PrepareLocalizer extends Command
         foreach ($finalLanguages as $langCode => $translations) {
             $language = Language::getOrCreate(['slug' => $langCode]);
             foreach ($translations as $transCode => $translation) {
-                runInLocale(function() use ($language, $transCode, $translation) {
+                runInLocale(function() use ($language, $translation) {
                     $language->setAndSave([
                                               'title' => $translation,
                                           ]);

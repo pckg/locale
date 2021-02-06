@@ -64,7 +64,7 @@ class Localize extends AbstractChainOfReponsibility
 
             if ($i18n['force'] == true) // perform redirect
             {
-                if ($i18n['type'] == "domain" && strpos($request->host(), $lang['code']) !== 0) {
+                /*if ($i18n['type'] == "domain" && strpos($request->host(), $lang['code']) !== 0) {
                     response()->redirect(
                         $request->scheme() . "://" . $i18n['langs'][$i18n['current']]['code'] . "." .
                         $config['domain'] . $request->url()
@@ -72,7 +72,7 @@ class Localize extends AbstractChainOfReponsibility
                 } else if ($i18n['type'] == "url" && strpos($request->url(), $lang['code']) !== 0) {
                     die("url doesnt work ... yet ... =)");
                     $this->response->redirect($request->scheme() . "://" . $request->host() . $request->url());
-                }
+                }*/
             }
         }
 

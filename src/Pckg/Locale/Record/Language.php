@@ -6,6 +6,11 @@ use Pckg\Database\Record;
 use Pckg\Locale\Entity\Languages;
 use Pckg\Manager\Locale;
 
+/**
+ * @property string $locale
+ * @property string $slug
+ * @property string $domain
+ */
 class Language extends Record
 {
 
