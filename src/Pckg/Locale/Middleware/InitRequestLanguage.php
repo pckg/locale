@@ -25,6 +25,18 @@ class InitRequestLanguage
             }
 
             /**
+             * Check for custom param.
+             */
+            $getLang = request()->get('_lang_id');
+
+            if ($getLang && isset($languages[substr($getLang, 0, 2)])) {
+                message('Setting locale from _lang_id parameter.');
+                $this->setFromLangCode(substr($getLang, 0, 2));
+
+                return $next();
+            }
+
+            /**
              * Check for header stuff.
              */
             $headerLocale = request()->header('X-Pckg-Locale');
