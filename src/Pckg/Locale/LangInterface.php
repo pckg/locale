@@ -7,7 +7,6 @@ namespace Pckg\Locale;
  */
 interface LangInterface
 {
-
     /**
      * @return string
      */

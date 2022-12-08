@@ -7,11 +7,12 @@ use Pckg\Locale\Record\Language;
 
 class Languages extends Entity
 {
-
     protected $record = Language::class;
 
     public function boot()
     {
         $this->joinTranslations();
+
+        return $this;
     }
 }

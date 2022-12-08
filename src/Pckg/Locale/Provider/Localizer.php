@@ -9,7 +9,6 @@ use Pckg\Locale\Record\Language;
 
 class Localizer extends Provider
 {
-
     public function consoles()
     {
         return [

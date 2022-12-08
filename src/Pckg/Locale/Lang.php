@@ -7,7 +7,6 @@ use Pckg\Locale\LangInterface as LangAdapter;
 
 class Lang implements LangAdapter
 {
-
     protected $langId = 'en';
 
     public function __construct($language = null)

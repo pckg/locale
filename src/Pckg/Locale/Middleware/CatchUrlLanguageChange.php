@@ -4,7 +4,6 @@ namespace Pckg\Locale\Middleware;
 
 class CatchUrlLanguageChange
 {
-
     public function execute(callable $next)
     {
         if (!isHttp()) {

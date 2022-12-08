@@ -7,7 +7,6 @@ use Pckg\Manager\Locale;
 
 class Localize extends AbstractChainOfReponsibility
 {
-
     /**
      * @var Locale
      */

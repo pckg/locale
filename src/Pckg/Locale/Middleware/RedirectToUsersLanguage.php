@@ -6,7 +6,6 @@ use Pckg\Locale\Record\Language;
 
 class RedirectToUsersLanguage
 {
-
     public function execute(callable $next)
     {
         /**
@@ -19,10 +18,12 @@ class RedirectToUsersLanguage
         /**
          * Skip non-http requests.
          */
+        // @phpstan-ignore-next-line
         if (true || !config('multilingual')) {
             return $next();
         }
 
+        // @phpstan-ignore-next-line
         $httpAcceptLanguages = explode(';', server('HTTP_ACCEPT_LANGUAGE'));
         $currentLocale = localeManager()->getCurrent();
         $currentLang = substr($currentLocale, 0, 2);

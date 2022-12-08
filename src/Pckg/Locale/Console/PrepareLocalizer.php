@@ -9,7 +9,6 @@ use Symfony\Component\Console\Input\InputArgument;
 
 class PrepareLocalizer extends Command
 {
-
     protected function configure()
     {
         $this->setName('localizer:prepare')

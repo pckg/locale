@@ -13,7 +13,6 @@ use Pckg\Manager\Locale;
  */
 class Language extends Record
 {
-
     protected $entity = Languages::class;
 
     public function getRootUrl()

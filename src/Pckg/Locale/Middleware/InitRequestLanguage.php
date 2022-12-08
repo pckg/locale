@@ -6,7 +6,6 @@ use Pckg\Locale\Record\Language;
 
 class InitRequestLanguage
 {
-
     public function execute(callable $next)
     {
         if (isHttp()) {
