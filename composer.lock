@@ -2377,22 +2377,24 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pckg/manager.git",
-                "reference": "27ee91c6c96cbda20166fd71b8874f1cd54002b0"
+                "reference": "d1b560417134bcf3326919d2bb3db8774fe29d15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pckg/manager/zipball/27ee91c6c96cbda20166fd71b8874f1cd54002b0",
-                "reference": "27ee91c6c96cbda20166fd71b8874f1cd54002b0",
+                "url": "https://api.github.com/repos/pckg/manager/zipball/d1b560417134bcf3326919d2bb3db8774fe29d15",
+                "reference": "d1b560417134bcf3326919d2bb3db8774fe29d15",
                 "shasum": ""
             },
             "require": {
                 "assetic/framework": "1.*"
             },
             "require-dev": {
-                "pckg-app/frontend-dev": "dev-next-8.0 as master",
-                "pckg/collection": "dev-next-8.0 as master",
-                "pckg/database": "dev-next-8.0 as master",
-                "pckg/framework": "dev-next-8.0 as master",
+                "pckg-app/frontend-dev": "dev-next-8.0 as dev-master",
+                "pckg/cache": "dev-next-8.0 as dev-master",
+                "pckg/collection": "dev-next-8.0 as dev-master",
+                "pckg/database": "dev-next-8.0 as dev-master",
+                "pckg/framework": "dev-next-8.0 as dev-master",
+                "pckg/locale": "dev-next-8.0 as dev-master",
                 "pckg/queue": "dev-master",
                 "pckg/storage": "dev-master"
             },
@@ -2419,7 +2421,7 @@
                 "issues": "https://github.com/pckg/manager/issues",
                 "source": "https://github.com/pckg/manager/tree/next-8.0"
             },
-            "time": "2022-09-10T12:57:36+00:00"
+            "time": "2022-12-08T20:40:54+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -3024,16 +3026,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.5.26",
+            "version": "9.5.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "851867efcbb6a1b992ec515c71cdcf20d895e9d2"
+                "reference": "a2bc7ffdca99f92d959b3f2270529334030bba38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/851867efcbb6a1b992ec515c71cdcf20d895e9d2",
-                "reference": "851867efcbb6a1b992ec515c71cdcf20d895e9d2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a2bc7ffdca99f92d959b3f2270529334030bba38",
+                "reference": "a2bc7ffdca99f92d959b3f2270529334030bba38",
                 "shasum": ""
             },
             "require": {
@@ -3106,7 +3108,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.26"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.27"
             },
             "funding": [
                 {
@@ -3122,7 +3124,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-10-28T06:00:21+00:00"
+            "time": "2022-12-09T07:31:23+00:00"
         },
         {
             "name": "predis/predis",
